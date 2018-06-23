@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Face detection demo</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+</head>
+
+<body>
+
+<div class = "container">
+    <div class = "starter-template">
+        <h1>Face detection example</h1>
+        <p class = "lead"> Try uploading an image to see if a face is detected </p>
+        <p> Face detection using <a href="https://docs.opencv.org/2.4/modules/objdetect/doc/cascade_classification.html" target="blank"> Cascade Classification </a> | Powered by Python, Flask, OpenCV </p>
+        <p> Image size limit: 10 MB </p>
+        <p> By Jerome Vonk - May, 2018 </p>
+    </div>
+</div>
+
+<header class="navbar">
+    <form action="/upload" method="post" enctype="multipart/form-data" >
+        <div align="center">
+            <label class="btn btn-default btn-file">
+                Browse <input type="file" name="image" style="display: none;">
+            </label>
+            <input type="submit" value="Upload your image" class="btn btn-primary">
+        </div>
+    </form>
+</header>
+
+<div class="text-center">
+    {% if init %}
+        {% if faceDetected %}
+            <div class="alert alert-success" style="margin-top:18px;">
+                <strong>Yes!</strong> {{ num_faces }} face(s) detected!
+            </div>
+            {% if image_to_show %}
+                <div>
+                    <img src="{{ image_to_show }}">
+                </div>
+            {% endif %}
+        {% else %}
+            <div class="alert alert-danger" style="margin-top:18px;">
+                <strong>Nope!</strong> No face detected
+            </div>
+        {% endif %}
+    {% endif %}
+</div>
+
+</body>
+</html>
