@@ -7,6 +7,8 @@ This is a very simple Flask app that let's the user upload a image and detects h
 Generate pipfile with command:
 
 `pipenv install opencv-contrib-python`
+`pipenv install Flask`
+`pipenv install gunicorn`
 
 Try it [here](https://face-detection-flask.herokuapp.com/).
 
