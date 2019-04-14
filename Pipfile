@@ -8,6 +8,7 @@ Flask = "*"
 opencv-contrib-python = "*"
 gunicorn = "*"
 numpy = "*"
+Jinja2 = ">=2.10.1"
 
 [dev-packages]
 
