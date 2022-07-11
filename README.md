@@ -20,7 +20,7 @@ Try it [here](https://face-detection-flask.herokuapp.com/).
 
 https://elements.heroku.com/buildpacks/heroku/heroku-buildpack-apt
 
-and include a list of apt package names to be installed the `Aptfile`
+and include a list of apt package names to be installed in the `Aptfile` (more details here: https://stackoverflow.com/a/51004957/660711)
 
 ## Docker
 
